@@ -223,7 +223,7 @@ export async function generateNetworkSpec(
 
   if (config.parachains && config.parachains.length) {
     for (const parachain of config.parachains) {
-      const para: PARA = whichPara(parachain.chain || "");
+      const para: PARA = parachain.id === 2110 ? PARA.Mangata : whichPara(parachain.chain || "");
 
       let computedStatePath,
         computedStateCommand,
